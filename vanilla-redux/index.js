@@ -1,4 +1,5 @@
-import { createStore } from 'redux';
+import { legacy_createStore as createStore } from "redux"
+import rootReducer from "./reducers/rootReducer"
 
 const divToggle = document.querySelector('.toggle')
 const counter = document.querySelector('h1')
@@ -36,8 +37,8 @@ function reducer(state = initialState, action) {
     }
 }
 
-const store = createStore(reducer)
-
+const store = createStore(rootReducer)
+export default store;
 
 const render = () => {
 
